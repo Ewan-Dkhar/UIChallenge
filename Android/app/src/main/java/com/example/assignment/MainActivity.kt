@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.widget.addTextChangedListener
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +23,19 @@ class MainActivity : AppCompatActivity() {
         val etAge = findViewById<EditText>(R.id.etAge)
         val btnVerify = findViewById<Button>(R.id.btnVerify)
         val tvStatus = findViewById<TextView>(R.id.tvStatus)
+        val ivAvatar = findViewById<ImageView>(R.id.avatar)
+
+        // Pick a Picture from gallery
+        val photoPickerLauncher =
+            registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+                ivAvatar.setImageURI(uri)
+            }
+
+        ivAvatar.setOnClickListener {
+            photoPickerLauncher.launch(
+                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+            )
+        }
 
         fun resetVerification() {
             isVerified = false
@@ -66,5 +81,9 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("AGE", etAge.text.toString().trim())
             startActivity(intent)
         }
+
+        // Change to dark mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
+
 }

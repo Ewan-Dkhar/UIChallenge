@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:fitsSystemWindows="true"
-    android:background="@android:color/white">
+    android:fitsSystemWindows="true">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,7 +13,7 @@
         android:textSize="22sp"
         android:layout_marginLeft="10dp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="?attr/colorOnBackground"
         android:layout_marginBottom="24dp"/>
 
     <TextView
@@ -24,7 +23,7 @@
         android:textSize="22sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:textColor="@android:color/black"
+        android:textColor="?attr/colorOnBackground"
         android:layout_marginBottom="24dp"/>
 
     <TextView
@@ -33,14 +32,14 @@
         android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         android:layout_marginBottom="12dp"/>
 
     <TextView
         android:id="@+id/tvAge"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         android:layout_height="wrap_content"
         android:textSize="18sp"/>
 

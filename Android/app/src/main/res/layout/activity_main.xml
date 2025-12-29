@@ -2,10 +2,10 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white"
     android:fitsSystemWindows="true"
     >
 
@@ -20,22 +20,27 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profile Setup"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="35dp"
-                android:text="Welcome!!"
-                android:textColor="@android:color/black"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:text="Welcome"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/pacifico"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -46,15 +51,43 @@
                 android:textColor="#9E9E9E"
                 android:textSize="14sp" />
 
-            <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/bg_profile_image"
-                android:padding="26dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/userr" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_profile_image"
+                    android:padding="26dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/userr"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:backgroundTint="?attr/colorPrimary"
+                    app:cardCornerRadius="50dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom"
+                        android:src="@drawable/add"
+                        />
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -62,7 +95,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="24dp"
                 android:text="Name"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -71,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintEnabled="false"
-                app:boxStrokeColor="@color/black"
+                app:boxStrokeColor="?attr/colorOutline"
                 app:boxStrokeWidth="1dp"
                 android:layout_marginTop="4dp"
                 app:boxCornerRadiusTopStart="12dp"
@@ -84,8 +117,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter your name"
-                    android:textColorHint="#A4A4A4"
-                    android:textColor="@color/black"
+                    android:textColorHint="?attr/colorOnSurfaceVariant"
+                    android:textColor="?attr/colorOnSurface"
                     android:inputType="textPersonName"
                     android:padding="16dp" />
 
@@ -98,7 +131,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="20dp"
                 android:text="Age"
-                android:textColor="@android:color/black"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -107,7 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintEnabled="false"
-                app:boxStrokeColor="@color/black"
+                app:boxStrokeColor="?attr/colorOutline"
                 app:boxStrokeWidth="1dp"
                 android:layout_marginTop="4dp"
                 app:boxCornerRadiusTopStart="12dp"
@@ -120,8 +153,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter your age"
-                    android:textColorHint="#A4A4A4"
-                    android:textColor="@color/black"
+                    android:textColorHint="?attr/colorOnSurfaceVariant"
+                    android:textColor="?attr/colorOnSurface"
                     android:inputType="number"
                     android:padding="16dp" />
 
@@ -132,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginHorizontal="2dp"
-                app:cardBackgroundColor="#f4f4f4"
+                app:cardBackgroundColor="?attr/colorSurface"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="2dp">
 
@@ -153,7 +186,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Verification Status"
-                            android:textColor="@android:color/black"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="15sp"
                             android:textStyle="bold" />
 
@@ -171,10 +204,10 @@
                         android:id="@+id/btnVerify"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="#0677f8"
+                        android:backgroundTint="?attr/colorPrimary"
                         android:paddingHorizontal="22dp"
                         android:text="Verify"
-                        android:textColor="@android:color/white"
+                        android:textColor="?attr/colorOnPrimary"
                         android:textSize="16sp"
                         app:cornerRadius="10dp" />
                 </LinearLayout>
@@ -185,9 +218,9 @@
                 android:id="@+id/btnContinue"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="?attr/colorOnBackground"
                 android:text="Continue"
-                android:textColor="@android:color/white"
+                android:textColor="?android:attr/colorBackground"
                 android:textSize="16sp"
                 android:layout_marginTop="60dp"
                 android:textStyle="bold"
