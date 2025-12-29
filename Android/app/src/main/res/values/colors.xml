@@ -5,4 +5,6 @@
     <color name="card_bg">#f4f4f4</color>
     <color name="hint_gray">#A4A4A4</color>
     <color name="accent_blue">#0677F8</color>
+    <color name="dark_bg">#121212</color>
+    <color name="dark_card_bg">#1E1E1E</color>
 </resources>

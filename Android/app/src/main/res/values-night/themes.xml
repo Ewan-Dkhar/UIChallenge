@@ -3,20 +3,16 @@
     <style name="Base.Theme.Assignment" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="android:colorBackground">#121212</item>
-        <item name="colorSurface">#1E1E1E</item>
+        <item name="android:colorBackground">@color/dark_bg</item>
+        <item name="colorSurface">@color/dark_card_bg</item>
 
-        <item name="colorOnBackground">@android:color/white</item>
-        <item name="colorOnSurface">@android:color/white</item>
-        <item name="colorOnSurfaceVariant">#A4A4A4</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/hint_gray</item>
 
-        <item name="colorOutline">#A4A4A4</item>
+        <item name="colorOutline">@color/hint_gray</item>
 
-        <item name="colorPrimary">#0677F8</item>
+        <item name="colorPrimary">@color/accent_blue</item>
         <item name="colorOnPrimary">@android:color/white</item>
-    </style>
-
-    <style name="addProfile" parent="Widget.AppCompat.ImageButton">
-        <item name="cornerRadius">20dp</item>
     </style>
 </resources>
